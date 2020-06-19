@@ -14,6 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Currently in development. Migrating the E-Portfolio from the older version where the tech stack is
 - HTML/CSS, Javascript, Bootstrap
+
 To
 - Next.js, React.js, Node.js, HTML/CSS, Javascript
 
