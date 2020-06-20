@@ -32,7 +32,7 @@ const Navbar = () => {
                     .nav {
                         width: 100%;
                         height: 60px;
-                        margin: -8px;
+                        margin: -8px -8px 0px -8px;
                         padding-left: 20px;
                         font-family: 'Montserrat', sans-serif;
                         font-size: 14pt;
