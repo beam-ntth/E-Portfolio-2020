@@ -1,19 +1,35 @@
 import Head from 'next/head';
 
 import Intro from '../components/MainPage/Intro';
-import CurrentProject from '../components/MainPage/CurrentProjects';
+import Navbar from '../components/Navigation/Navbar';
 
 const Bio = () => {
     return (
         <div className="container">
             <Head>
-                <title>Beam | Experience</title>
+                <title>Beam | Biography</title>
             </Head>
+            <Navbar />
             <main>
                 <Intro />
-                <CurrentProject />
             </main>
+            <style jsx>
+                {
+                    `
+                    main {
+                        margin-top: 40px;
+                    }
+
+                    @media (max-width: 576px) {
+                        main {
+                            margin-top: 20px;
+                        }
+                    }  
+                    `
+                }
+            </style>
         </div>
+
     );
 };
 
