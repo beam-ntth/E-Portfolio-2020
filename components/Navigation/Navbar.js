@@ -39,6 +39,7 @@ const Navbar = () => {
                         font-weight: 200;
                         color: white;
                         background-color: #04c2c9;
+                        z-index: 50;
                     }
 
                     .pages {
