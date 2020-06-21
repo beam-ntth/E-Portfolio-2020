@@ -81,7 +81,7 @@ const golf = () => {
                     }
 
                     .animation {
-                        animation: slideInTop 1s;
+                        animation: slideInTop 0.75s ease-in;
                     }
 
                     @keyframes slideInTop {

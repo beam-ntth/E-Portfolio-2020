@@ -25,19 +25,19 @@ const ExpCard = ( props ) => {
                         }
 
                         .animation-card {
-                            animation: fadeIn 1.25s; 
+                            animation: fadeIn 0.75s ease-in; 
                         }
 
                         .flip-card {
                             position: relative;
                             width: 100%;
                             height: 100%;
-                            transition: transform 1s;
+                            transition: transform 0.6s ease-in;
                             transform-style: preserve-3d;
                         }
 
                         .flip-card-container:hover .flip-card {
-                            transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
+                            transform: rotateY(180deg);
                         }
 
                         /* Position the front and back side */
