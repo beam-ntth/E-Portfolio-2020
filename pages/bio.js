@@ -8,6 +8,7 @@ const Bio = () => {
         <div className="container">
             <Head>
                 <title>Beam | Biography</title>
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
             <main>

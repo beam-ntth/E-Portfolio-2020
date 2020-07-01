@@ -37,6 +37,7 @@ const Cs = () => {
         <div className="container">
             <Head>
                 <title>Beam | CS</title>
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
             <main>

@@ -7,6 +7,7 @@ const golf = () => {
         <div className='container'>
             <Head>
                 <title>Beam | Golf</title>
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
             <div className='box animation'>

@@ -53,6 +53,7 @@ const Experience = () => {
         <div className="container">
             <Head>
                 <title>Beam | Experience</title>
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
             <main>

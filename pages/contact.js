@@ -23,6 +23,7 @@ const Contact = () => {
             <div className="container">
                 <Head>
                     <title>Beam | Contact</title>
+                    <link rel="icon" href="/favicon.ico" />
                 </Head>
 
                 <div className='contact'>
