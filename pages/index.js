@@ -8,6 +8,7 @@ export default function Home () {
     <div className="container">
       <Head>
         <title>Beam | Main</title>
+        <meta name='title' content='Natheethorn Teacharuangchit E-Portfolio. Junior at UC Davis. Graduate June 2022. Utilizing Next.js, React.js, and Node.js for this web application' />
       </Head>
       <Stars />
       <div className='hero'>

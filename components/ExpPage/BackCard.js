@@ -1,6 +1,15 @@
 const BackCard = ( props ) => {
-    const { position, respon } = props.children[ 1 ];
 
+    let position, respon, respon1, respon2;
+    if (typeof( props.children[ 1 ].position) === 'object') {
+        position = props.children[ 1 ].position;
+        respon1 = props.children[ 1 ].respon1;
+        respon2 = props.children[ 1 ].respon2
+    } else {
+        position = props.children[ 1 ].position;
+        respon = props.children[ 1 ].respon;
+    }
+    
     let exp;
     if ( typeof ( position ) === 'object' ) {
         exp = (
@@ -8,13 +17,11 @@ const BackCard = ( props ) => {
                 <div className='content'>
                     <h1> { position.pos2 } </h1>
                     <ul>
-                        <li> { respon.res3 } </li>
-                        <li> { respon.res4 } </li>
+                        { respon2.map( (res, index) => <li key={'respon2'+index}> { res } </li> ) }
                     </ul>
                     <h1> { position.pos1 } </h1>
                     <ul>
-                        <li> { respon.res1 } </li>
-                        <li> { respon.res2 } </li>
+                        { respon1.map( (res, index) => <li key={'respon1'+index}> { res } </li> ) }
                     </ul>
                 </div>
             </div> );
@@ -24,8 +31,7 @@ const BackCard = ( props ) => {
                 <div className='content'>
                     <h1> { position } </h1>
                     <ul>
-                        <li> { respon.res1 } </li>
-                        <li> { respon.res2 } </li>
+                        { respon.map( (res, index) => <li key={'respon'+index}> { res } </li> ) }
                     </ul>
                 </div>
             </div> );

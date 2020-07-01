@@ -14,7 +14,7 @@ const Intro = () => {
                         <p>My name is Natheethorn Teacharuangchit. I was born in Bangkok, Thailand. I'm currently a student-athlete on the Men's Golf Team at University of California, Davis and pursuing a Bachelor's Degree of Computer Science and Engineering. I mostly spend my time coding(obviously), practicing golf, and hanging out with my boys. If you wonder why I started programming or playing golf, go visit my CS and GOLF page!</p>
                         <h4>Other Interests</h4>
                         <ul>
-                            <li>Try out thai tea boba at any new boba places near me</li>
+                            <li>Thai tea boba</li>
                             <li>Rick and Morty</li>
                         </ul>
                     </div>

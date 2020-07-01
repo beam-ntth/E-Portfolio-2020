@@ -87,7 +87,6 @@ const Contact = () => {
 
                     .animation-line {
                         animation: slideInRight 0.75s ease-in;
-                        animation-delay: 0.3s;
                     }
 
                     .animation {

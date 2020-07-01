@@ -17,11 +17,12 @@ const Experience = () => {
 
     const responsibility = {
         position: 'Trading Assistant',
-        respon: {
-            res1: 'Responsible for conducting research and analysis on the inefficiency of the stock market using Python and implement trading strategies on Tradestation using Tradestation Easylanguage',
-            res2: 'Created 10+ new trading indicators offering the CIO more tools to make better decisions for various market situations',
-        }
-    }
+        respon: [
+            'Responsible for conducting research and analysis on the inefficiency of the stock market using Python and implement trading strategies on Tradestation using Tradestation Easylanguage',
+            `Developed a trading model utilizing Google Cloud Platform's machine learning service, AutoML, to recognize the pattern of the market over a short timeframe with over 90 percent success rate for short trades.`,
+            `Created 10+ new trading indicators offering the CIO more tools to make better decisions for various market situations`,
+        ]
+    };
 
     const SacHacks = {
         name: 'SacHacks',
@@ -31,20 +32,22 @@ const Experience = () => {
             from: 'November 2019',
             to: 'Current'
         }
-    }
+    };
 
     const SacRes = {
         position: {
             pos1: 'Web Developer',
             pos2: 'Lead Web Developer'
         },
-        respon: {
-            res1: "Utilized HTML, CSS, JavaScript, Bootstrap, and Twitter API for the SacHacks main website (sachacks.io) and SacHacks live website (sachacks.io/2020/ash.html) that was used by 100+ individuals during hackathon",
-            res2: 'Optimized design of websites under instructions of SacHacks designers and Executive Director',
-            res3: 'Lead efforts on creating 4 new websites in preparation for future hackathons including the SacHacks legacy and mini-hackathon websites, and a brand-new SacHacks main and live websites',
-            res4: 'Recruit students from different colleges to be part of the web development team as well as develop team culture with team bonding activities'
-        }
-    }
+        respon1: [
+            "Utilized HTML, CSS, JavaScript, Bootstrap, and Twitter API for the SacHacks main website (sachacks.io) and SacHacks live website (sachacks.io/2020/ash.html) that was used by 100+ individuals during hackathon",
+            'Optimized design of websites under instructions of SacHacks designers and Executive Director', ],
+        respon2: [
+            'Lead efforts on creating 4 new websites in preparation for future hackathons including the SacHacks legacy and mini-hackathon websites, and a brand-new SacHacks main and live websites',
+            'Migrate the previous main and live websites tech stack from utilizing HTML/CSS, JS, Bootstrap to ReactJS',
+            'Recruit students from different colleges to be part of the web development team as well as develop team culture with team bonding activities'
+        ]
+    };
 
     return (
         <div className="container">
@@ -55,8 +58,8 @@ const Experience = () => {
             <main>
                 <h1 className='header animation-head'>Work Experience</h1>
                 <div className='header-line animation-line'></div>
-                <Cards place={Dipsea} job={responsibility} />
-                <Cards place={SacHacks} job={SacRes} /> 
+                <Cards place={ Dipsea } job={ responsibility } />
+                <Cards place={ SacHacks } job={ SacRes } />
             </main>
             <style jsx>
                 {
