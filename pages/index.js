@@ -8,8 +8,11 @@ export default function Home () {
     <div className="container">
       <Head>
         <title>Beam | Main</title>
-        <meta name='title' content='Natheethorn Teacharuangchit E-Portfolio. Junior at UC Davis. Graduate June 2022. Utilizing Next.js, React.js, and Node.js for this web application' />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property='og:title' content='Natheethorn Teacharuangchit | E-Portfolio' />
+        <meta property='og:image' content='/front-page.png' />
+        <meta property='og:description' content='Natheethorn Teacharuangchit E-Portfolio deployed in 2020. Junior at UC Davis. Graduate June 2022. Utilizing Next.js, React.js, and Node.js for this web application' />
+        <meta property='og:url' content='https://e-portfolio-2020.vercel.app/' />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <Stars />
       <div className='hero'>
