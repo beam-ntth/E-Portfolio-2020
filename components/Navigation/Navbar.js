@@ -77,6 +77,10 @@ const Navbar = ( props ) => {
                         .main-buttons {
                             display: none;
                         }
+
+                        .tg-button {
+                            visibility: visible;
+                        }
                     }
 
                     // Medium devices (tablets, 768px and up)
@@ -91,6 +95,10 @@ const Navbar = ( props ) => {
 
                         .main-buttons {
                             display: none;
+                        }
+
+                        .tg-button {
+                            visibility: visible;
                         }
                     }
 
