@@ -44,7 +44,7 @@ const BackCard = ( props ) => {
                 {
                     `
                     .back-card {
-                        height: 500px;
+                        height: 550px;
                         width: 100%;
                         background-color: #fff;
                         border-radius: 30px;
@@ -70,8 +70,39 @@ const BackCard = ( props ) => {
                     }
 
                     .content {
-                        
                         width: 70%;
+                    }
+
+                    // Small devices
+                    @media (max-width: 576px) {
+                        .back-card {
+                            height: 700px;
+                        }
+                        .content h1 {
+                            margin: 10px 0px;
+                            font-size: 20px;
+                        }
+                        .content {
+                            width: 95%;
+                        }
+                        .content li {
+                            font-size: 13px;
+                            line-height: 20pt;
+                        }
+                    }
+
+                    // Medium devices (tablets, 768px and up)
+                    @media (min-width: 576px) and (max-width: 768px) {
+                        .back-card {
+                            height: 700px;
+                        }
+                    }
+
+                    // Large devices (desktops, 992px and up)
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        .back-card {
+                            height: 700px;
+                        }
                     }
                     `
                 }

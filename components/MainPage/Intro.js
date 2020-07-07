@@ -84,8 +84,8 @@ const Intro = () => {
                     img {
                         border-radius: 25px;
                         box-shadow: 7px 7px #444649;
-                        height: 100%;
-
+                        width: 235px;
+                        height: auto;
                     }
 
                     .description .bio {
@@ -149,6 +149,13 @@ const Intro = () => {
                             width: 40%;
                         }
 
+                        img {
+                            border-radius: 25px;
+                            box-shadow: 7px 7px #444649;
+                            width: auto;
+                            height: 100%;
+                        }
+
                         .description .bio {
                             display: flex;
                             flex-direction: column;
@@ -171,6 +178,7 @@ const Intro = () => {
 
                     // Medium devices (tablets, 768px and up)
                     @media (min-width: 576px) and (max-width: 768px) {
+
                         .about-me .header {
                             font-size: 18pt;
                         }
@@ -184,6 +192,7 @@ const Intro = () => {
                         .description {
                             margin: 20px 0px;
                             height: 25%;
+                            
                         }
 
                         .description .image {
@@ -220,6 +229,7 @@ const Intro = () => {
                         .description {
                             margin: 20px 25px;
                             height: 25%;
+                            width: 95%;
                         }
 
                         .description .image {

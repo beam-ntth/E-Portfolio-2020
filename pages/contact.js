@@ -2,7 +2,9 @@ import Head from 'next/head';
 
 import Navbar from '../components/Navigation/Navbar';
 import { FaLinkedinIn, FaGithub, FaStackOverflow } from 'react-icons/fa';
-import { useEffect } from 'react';
+import { useState } from 'react';
+import SideDrawer from '../shared/SideDrawer/SideDrawer';
+import Backdrop from '../shared/Backdrop/Backdrop';
 
 const Contact = () => {
     const gitOpen = () => {
@@ -17,9 +19,18 @@ const Contact = () => {
         window.open( 'https://stackoverflow.com/users/story/13485469' );
     };
 
+    const [ sideDrawerOpen, setSideDrawerOpen ] = useState( false );
+
+    let backdrop;
+    if ( sideDrawerOpen ) {
+        backdrop = <Backdrop click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />;
+    }
+
     return (
         <React.Fragment>
-            <Navbar />
+            <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
+            <SideDrawer show={sideDrawerOpen} />
+            { backdrop }
             <div className="container">
                 <Head>
                     <title>Beam | Contact</title>
@@ -175,6 +186,55 @@ const Contact = () => {
                     @keyframes slideInRight {
                         from {opacity: 0; transform: translateX(100%)}
                         to {opacity: 1; transform: translateX(0)}		
+                    }
+
+                    // Small devices
+                    @media (max-width: 576px) {
+                        .header {
+                            padding: 0;
+                            margin: 30px 0px 0px 0px;
+                            font-weight: 400;
+                            font-size: 25px;
+                            color: #444649;
+                        }
+    
+                        .header-line {
+                            width: 40px;
+                            border-top: 3px solid #444649;
+                            margin-top: 10px;
+                        }
+
+                        .email p {
+                            font-size: 17px;
+                            font-weight: 200;
+                            margin: 20px 0px 0px 0px;
+                        }
+
+                        .email a {
+                            margin-left: 10px;
+                            font-size: 16px;
+                        }
+
+                        .phone p {
+                            font-size: 17px;
+                            font-weight: 200;
+                            margin: 0;
+                        }
+
+                        .linked, .github, .overflow {
+                            height: 40px;
+                            width: 40px;
+                        }
+                    }
+
+                    // Medium devices (tablets, 768px and up)
+                    @media (min-width: 576px) and (max-width: 768px) {
+                    
+                    }
+
+                    // Large devices (desktops, 992px and up)
+                    @media (min-width: 768px) and (max-width: 992px) {
+                    
                     }
                     `
                     }

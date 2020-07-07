@@ -4,6 +4,9 @@ import Navbar from '../components/Navigation/Navbar';
 import HackCard from '../components/CSPage/HackCard';
 import ProjCard from '../components/CSPage/ProjCard';
 import LangCard from '../components/CSPage/LangCard';
+import { useState } from 'react';
+import SideDrawer from '../shared/SideDrawer/SideDrawer';
+import Backdrop from '../shared/Backdrop/Backdrop';
 
 const Cs = () => {
     const eTree = {
@@ -33,13 +36,23 @@ const Cs = () => {
         link: 'https://github.com/beam-ntth/Trading-Economics-Analyzer',
         tech: 'HTML/CSS / Python (Django) / Trading Economics API'
     };
+
+    const [ sideDrawerOpen, setSideDrawerOpen ] = useState( false );
+
+    let backdrop;
+    if ( sideDrawerOpen ) {
+        backdrop = <Backdrop click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />;
+    }
+
     return (
         <div className="container">
             <Head>
                 <title>Beam | CS</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar />
+            <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
+            <SideDrawer show={sideDrawerOpen} />
+            { backdrop }
             <main>
                 <h1 className='header animation-head'>Hackathons</h1>
                 <div className='header-line animation-line'></div>
@@ -68,6 +81,9 @@ const Cs = () => {
             <style jsx>
                 {
                     `
+                    .container {
+                        width: 100vw;
+                    }
                     main {
                         height: 100vh;
                         width: 100%;
@@ -127,6 +143,68 @@ const Cs = () => {
                     @keyframes slideInRight {
                         from {opacity: 0; transform: translateX(100%)}
                         to {opacity: 1; transform: translateX(0)}		
+                    }
+
+                    // Small devices
+                    @media (max-width: 576px) {
+                        .header {
+                            font-size: 25px;
+                        }
+
+                        .header-line {
+                            width: 100px;
+                        }
+
+                        .hackathon, .personal-proj {
+                            display: flex;
+                            width: 100%;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .others-first-row, .others-sec-row {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    // Medium devices (tablets, 768px and up)
+                    @media (min-width: 576px) and (max-width: 768px) {
+                        .hackathon, .personal-proj {
+                            display: flex;
+                            width: 100%;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .others-first-row, .others-sec-row {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    // Large devices (desktops, 992px and up)
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        .hackathon, .personal-proj {
+                            display: flex;
+                            width: 100%;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .others-first-row, .others-sec-row {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                        }
                     }
                     `
                 }

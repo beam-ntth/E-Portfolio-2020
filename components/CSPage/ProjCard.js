@@ -78,6 +78,31 @@ const ProjCard = ( props ) => {
                         from {opacity: 0; transform: translateX(100%)}
                         to {opacity: 1; transform: translateX(0)}		
                     }
+
+                    // Small devices
+                    @media (max-width: 576px) {
+                        .outer-card {
+                            width: 90%;
+                        }
+
+                        .proj-name {
+                            font-size: 20px;
+                        }
+
+                        .proj-tech {
+                            text-align: center;
+                        }
+                    }
+
+                    // Medium devices (tablets, 768px and up)
+                    @media (min-width: 576px) and (max-width: 768px) {
+                    
+                    }
+
+                    // Large devices (desktops, 992px and up)
+                    @media (min-width: 768px) and (max-width: 992px) {
+                    
+                    }
                     `
                 }
             </style>

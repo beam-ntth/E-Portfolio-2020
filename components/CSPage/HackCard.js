@@ -99,6 +99,27 @@ const HackCard = ( props ) => {
                         from {opacity: 0; transform: translateX(100%)}
                         to {opacity: 1; transform: translateX(0)}		
                     }
+
+                    // Small devices
+                    @media (max-width: 576px) {
+                        .card-outer {
+                            width: 95%;
+                        }
+
+                        .proj-name {
+                            font-size: 20px;
+                        }
+                    }
+
+                    // Medium devices (tablets, 768px and up)
+                    @media (min-width: 576px) and (max-width: 768px) {
+                    
+                    }
+
+                    // Large devices (desktops, 992px and up)
+                    @media (min-width: 768px) and (max-width: 992px) {
+                    
+                    }
                     `
                 }
             </style>

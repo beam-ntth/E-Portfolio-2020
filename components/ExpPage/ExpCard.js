@@ -19,7 +19,7 @@ const ExpCard = ( props ) => {
                     `
                         .flip-card-container {
                             width: 70%;
-                            height: 500px;
+                            height: 600px;
                             perspective: 1000px;
                             margin: 20px;
                         }
@@ -59,6 +59,30 @@ const ExpCard = ( props ) => {
                         @keyframes fadeIn {
                             from {opacity: 0; transform: translateY(100%);}
                             to {opacity: 1; transform: translateY(0)}		
+                        }
+
+                        // Small devices
+                        @media (max-width: 576px) {
+                            .flip-card-container {
+                                width: 100%;
+                                height: 700px;
+                            }
+                        }
+
+                        // Medium devices (tablets, 768px and up)
+                        @media (min-width: 576px) and (max-width: 768px) {
+                            .flip-card-container {
+                                width: 80%;
+                                height: 700px;
+                            }
+                        }
+
+                        // Large devices (desktops, 992px and up)
+                        @media (min-width: 768px) and (max-width: 992px) {
+                            .flip-card-container {
+                                width: 80%;
+                                height: 700px;
+                            }
                         }
                         `
                 }

@@ -2,6 +2,9 @@ import Head from 'next/head';
 
 import Navbar from '../components/Navigation/Navbar';
 import Cards from '../components/ExpPage/ExpCard';
+import { useState } from 'react';
+import SideDrawer from '../shared/SideDrawer/SideDrawer';
+import Backdrop from '../shared/Backdrop/Backdrop';
 
 const Experience = () => {
 
@@ -49,13 +52,22 @@ const Experience = () => {
         ]
     };
 
+    const [ sideDrawerOpen, setSideDrawerOpen ] = useState( false );
+
+    let backdrop;
+    if ( sideDrawerOpen ) {
+        backdrop = <Backdrop click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />;
+    }
+
     return (
         <div className="container">
             <Head>
                 <title>Beam | Experience</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar />
+            <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
+            <SideDrawer show={sideDrawerOpen} />
+            { backdrop }
             <main>
                 <h1 className='header animation-head'>Work Experience</h1>
                 <div className='header-line animation-line'></div>
@@ -109,6 +121,33 @@ const Experience = () => {
                     @keyframes slideInRight {
                         from {opacity: 0; transform: translateX(100%)}
                         to {opacity: 1; transform: translateX(0)}		
+                    }
+
+                    // Small devices
+                    @media (max-width: 576px) {
+                        main h1 {
+                            font-size: 27px;
+                        }
+
+                        .header-line {
+                            width: 100px;
+                            border-top: 3px solid #444649;
+                            margin-top: 10px;
+                        }
+                    }
+
+                    // Medium devices (tablets, 768px and up)
+                    @media (min-width: 576px) and (max-width: 768px) {
+                        main {
+                            height: 200vh;
+                        }
+                    }
+
+                    // Large devices (desktops, 992px and up)
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        main {
+                            height: 150vh;
+                        }
                     }
                     `
                 }

@@ -1,15 +1,28 @@
 import Head from 'next/head';
 
 import Navbar from '../components/Navigation/Navbar';
+import { useState } from 'react';
+import SideDrawer from '../shared/SideDrawer/SideDrawer';
+import Backdrop from '../shared/Backdrop/Backdrop';
 
 const golf = () => {
+
+    const [ sideDrawerOpen, setSideDrawerOpen ] = useState( false );
+
+    let backdrop;
+    if ( sideDrawerOpen ) {
+        backdrop = <Backdrop click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />;
+    }
+
     return (
         <div className='container'>
             <Head>
                 <title>Beam | Golf</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar />
+            <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
+            <SideDrawer show={sideDrawerOpen} />
+            { backdrop }
             <div className='box animation'>
                 <h1>Why I started playing golf?</h1>
                 <p>I started playing golf since I was 10 years old. When I was younger, my parents wanted me to go out and do some activities, so my dad took me to the golf course on Saturday with him to play golf with his friends. We would go to different golf courses every week and that when I realized that I love golf more than other sports because I get to experience new things and go to new places all the time.</p>
@@ -88,6 +101,35 @@ const golf = () => {
                     @keyframes slideInTop {
                         from {opacity: 0; transform: translateY(-100%)}
                         to {opacity: 1; transform: translateY(0)}		
+                    }
+
+                    // Small devices
+                    @media (max-width: 576px) {
+                        .container h1 {
+                            font-weight: 400;
+                            font-size: 25px;
+                        }
+
+                        .container p {
+                            font-size: 14px;
+                            font-weight: 200;
+                            line-height: 20pt;
+                        }
+
+                        .container h3 {
+                            font-weight: 400;
+                            font-size: 16px;
+                        }
+                    }
+
+                    // Medium devices (tablets, 768px and up)
+                    @media (min-width: 576px) and (max-width: 768px) {
+                    
+                    }
+
+                    // Large devices (desktops, 992px and up)
+                    @media (min-width: 768px) and (max-width: 992px) {
+                    
                     }
                     `
                 }
