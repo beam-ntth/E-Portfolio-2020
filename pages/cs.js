@@ -85,7 +85,6 @@ const Cs = () => {
                         width: 100vw;
                     }
                     main {
-                        height: 100vh;
                         width: 100%;
                         display: flex;
                         flex-direction: column;
@@ -124,6 +123,7 @@ const Cs = () => {
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        height: 100%;
                     }
 
                     .others-first-row, .others-sec-row {
@@ -158,6 +158,7 @@ const Cs = () => {
                         .hackathon, .personal-proj {
                             display: flex;
                             width: 100%;
+                            height: auto;
                             flex-direction: column;
                             align-items: center;
                             justify-content: center;
