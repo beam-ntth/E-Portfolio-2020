@@ -78,7 +78,6 @@ const Experience = () => {
                 {
                     `
                     main {
-                        height: 100vh;
                         width: 100%;
                         display: flex;
                         flex-direction: column;
@@ -138,16 +137,12 @@ const Experience = () => {
 
                     // Medium devices (tablets, 768px and up)
                     @media (min-width: 576px) and (max-width: 768px) {
-                        main {
-                            height: 200vh;
-                        }
+                    
                     }
 
                     // Large devices (desktops, 992px and up)
                     @media (min-width: 768px) and (max-width: 992px) {
-                        main {
-                            height: 150vh;
-                        }
+                
                     }
                     `
                 }
