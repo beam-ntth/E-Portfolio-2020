@@ -1,10 +1,9 @@
-import Head from 'next/head';
-
 import Navbar from '../components/Navigation/Navbar';
 import Cards from '../components/ExpPage/ExpCard';
 import { useState } from 'react';
 import SideDrawer from '../shared/SideDrawer/SideDrawer';
 import Backdrop from '../shared/Backdrop/Backdrop';
+import MetaTag from '../shared/MetaTag/MetaTag';
 
 const Experience = () => {
 
@@ -61,10 +60,7 @@ const Experience = () => {
 
     return (
         <div className="container">
-            <Head>
-                <title>Beam | Experience</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <MetaTag name="Experience" />
             <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
             <SideDrawer show={sideDrawerOpen} />
             { backdrop }

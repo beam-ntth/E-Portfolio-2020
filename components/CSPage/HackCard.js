@@ -1,12 +1,21 @@
+import { useEffect } from 'react';
+
+import Aos from 'aos';
+
 const HackCard = ( props ) => {
     const { name, place, image, link, tech } = props.hack;
     const goTo = () => {
         window.open( link );
     };
 
+    useEffect( () => {
+        Aos.init( { duration: 1200 } );
+    } );
+
     return (
         <React.Fragment>
-            <div className={`card-outer ${props.className}`}>
+            <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet" />
+            <div className={ `card-outer` } data-aos={ props.aos }>
                 <div className='hack-card'>
                     <h3 className='proj-name'>{ name }</h3>
                     <h3 className='proj-place'> { place } </h3>
@@ -80,24 +89,6 @@ const HackCard = ( props ) => {
                         border: 2px solid #04c2c9;
                         border-radius: 5px;
                         color: white;
-                    }
-
-                    .animation-ltor {
-                        animation: slideInLeft 0.75s ease-in;
-                    }
-
-                    .animation-rtol {
-                        animation: slideInRight 0.75s ease-in;
-                    }
-
-                    @keyframes slideInLeft {
-                        from {opacity: 0; transform: translateX(-100%)}
-                        to {opacity: 1; transform: translateX(0)}		
-                    }
-
-                    @keyframes slideInRight {
-                        from {opacity: 0; transform: translateX(100%)}
-                        to {opacity: 1; transform: translateX(0)}		
                     }
 
                     // Small devices

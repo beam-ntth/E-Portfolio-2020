@@ -1,10 +1,9 @@
-import Head from 'next/head';
-
 import Navbar from '../components/Navigation/Navbar';
 import { FaLinkedinIn, FaGithub, FaStackOverflow } from 'react-icons/fa';
 import { useState } from 'react';
 import SideDrawer from '../shared/SideDrawer/SideDrawer';
 import Backdrop from '../shared/Backdrop/Backdrop';
+import MetaTag from '../shared/MetaTag/MetaTag';
 
 const Contact = () => {
     const gitOpen = () => {
@@ -29,13 +28,10 @@ const Contact = () => {
     return (
         <React.Fragment>
             <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
-            <SideDrawer show={sideDrawerOpen} />
+            <SideDrawer show={ sideDrawerOpen } />
             { backdrop }
             <div className="container">
-                <Head>
-                    <title>Beam | Contact</title>
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
+                <MetaTag name='Contact' />
 
                 <div className='contact'>
                     <h1 className='header animation-head'>Contact</h1>

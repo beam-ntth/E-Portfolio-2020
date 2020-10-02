@@ -1,10 +1,9 @@
-import Head from 'next/head';
-
 import Intro from '../components/MainPage/Intro';
 import Navbar from '../components/Navigation/Navbar';
 import { useState } from 'react';
 import SideDrawer from '../shared/SideDrawer/SideDrawer';
 import Backdrop from '../shared/Backdrop/Backdrop';
+import MetaTag from '../shared/MetaTag/MetaTag';
 
 const Bio = () => {
     const [ sideDrawerOpen, setSideDrawerOpen ] = useState( false );
@@ -16,21 +15,24 @@ const Bio = () => {
 
     return (
         <div className="container">
-            <Head>
-                <title>Beam | Biography</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <MetaTag name='Biography' />
             <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
-            <SideDrawer show={sideDrawerOpen} />
+            <SideDrawer show={ sideDrawerOpen } />
             { backdrop }
             <main>
                 <Intro />
+                <div className='space'></div>
             </main>
             <style jsx>
                 {
                     `
                     main {
                         margin-top: 40px;
+                    }
+
+                    .space {
+                        height: 10%;
+                        width: 100%;
                     }
 
                     @media (max-width: 576px) {

@@ -1,11 +1,22 @@
+import { useEffect } from 'react';
+
 import Link from "next/link";
 
+import Aos from 'aos';
+
+
 const LangCard = ( props ) => {
+
     const { name, link } = props.lang;
+
+    useEffect( () => {
+        Aos.init( { duration: 1200 } );
+    } );
 
     return (
         <React.Fragment>
-            <div className={`outer-card ${props.className}`}>
+            <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet" />
+            <div className={ `outer-card` } data-aos={ props.aos }>
                 <div className='proj-name'>{ name }</div>
                 <div className='sp-between'></div>
                 <Link href={ link }><a className='button'>LEARN MORE</a></Link>
@@ -59,33 +70,6 @@ const LangCard = ( props ) => {
                         background-color: #e31b6d;
                         border-radius: 5px;
                         border: 1px solid #e31b6d;
-                    }
-
-                    .animation-ltor {
-                        animation: slideInLeft 0.75s ease-in;
-                    }
-
-                    .animation-rtol {
-                        animation: slideInRight 0.75s ease-in;
-                    }
-
-                    .animation-fi {
-                        animation: fadeIn 0.75s ease-in;
-                    }
-
-                    @keyframes slideInLeft {
-                        from {opacity: 0; transform: translateX(-100%)}
-                        to {opacity: 1; transform: translateX(0)}		
-                    }
-
-                    @keyframes slideInRight {
-                        from {opacity: 0; transform: translateX(100%)}
-                        to {opacity: 1; transform: translateX(0)}		
-                    }
-
-                    @keyframes fadeIn {
-                        from {opacity: 0}
-                        to {opacity: 1}		
                     }
 
                     // Small devices

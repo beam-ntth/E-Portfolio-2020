@@ -1,16 +1,26 @@
+import { useEffect } from 'react';
+
+import Aos from 'aos';
+
 const ProjCard = ( props ) => {
     const { name, link, tech } = props.proj;
 
     const goTo = () => {
         window.open( link );
     };
+
+    useEffect( () => {
+        Aos.init( { duration: 1200 } );
+    } );
+
     return (
         <React.Fragment>
-            <div className={`outer-card ${props.className}`}>
+            <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet" />
+            <div className={ `outer-card` } data-aos={ props.aos }>
                 <div className='proj-name'>{ name }</div>
                 <div className='sp-between'></div>
                 <div className='proj-tech'>{ tech }</div>
-                <div className='button' onClick={goTo}>LEARN MORE</div>
+                <div className='button' onClick={ goTo }>LEARN MORE</div>
             </div>
             <style jsx>
                 {
@@ -59,24 +69,6 @@ const ProjCard = ( props ) => {
                         background-color: #e31b6d;
                         border-radius: 5px;
                         border: 1px solid #e31b6d;
-                    }
-
-                    .animation-ltor {
-                        animation: slideInLeft 0.75s ease-in;
-                    }
-
-                    .animation-rtol {
-                        animation: slideInRight 0.75s ease-in;
-                    }
-
-                    @keyframes slideInLeft {
-                        from {opacity: 0; transform: translateX(-100%)}
-                        to {opacity: 1; transform: translateX(0)}		
-                    }
-
-                    @keyframes slideInRight {
-                        from {opacity: 0; transform: translateX(100%)}
-                        to {opacity: 1; transform: translateX(0)}		
                     }
 
                     // Small devices

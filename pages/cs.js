@@ -1,12 +1,15 @@
-import Head from 'next/head';
+import { useState, useEffect } from 'react';
 
 import Navbar from '../components/Navigation/Navbar';
 import HackCard from '../components/CSPage/HackCard';
 import ProjCard from '../components/CSPage/ProjCard';
 import LangCard from '../components/CSPage/LangCard';
-import { useState } from 'react';
 import SideDrawer from '../shared/SideDrawer/SideDrawer';
 import Backdrop from '../shared/Backdrop/Backdrop';
+import MetaTag from '../shared/MetaTag/MetaTag';
+
+// Animations
+import Aos from 'aos';
 
 const Cs = () => {
     const eTree = {
@@ -44,38 +47,39 @@ const Cs = () => {
         backdrop = <Backdrop click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />;
     }
 
+    useEffect( () => {
+        Aos.init( { duration: 1200 } );
+    } );
+
     return (
         <div className="container">
-            <Head>
-                <title>Beam | CS</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <MetaTag name='CS' />
             <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
-            <SideDrawer show={sideDrawerOpen} />
+            <SideDrawer show={ sideDrawerOpen } />
             { backdrop }
             <main>
-                <h1 className='header animation-head'>Hackathons</h1>
-                <div className='header-line animation-line'></div>
+                <h1 className='header' data-aos='fade-right'>Hackathons</h1>
+                <div className='header-line' data-aos='fade-up'></div>
                 <div className='hackathon'>
-                    <HackCard className='animation-ltor' hack={ eTree } />
-                    <HackCard className='animation-rtol' hack={ hackDavis } />
+                    <HackCard aos='fade-right' hack={ eTree } />
+                    <HackCard aos='fade-left' hack={ hackDavis } />
                 </div>
-                <h1 className='header animation-head'>Personal Projects</h1>
-                <div className='header-line animation-line'></div>
+                <h1 className='header' data-aos='fade-right'>Personal Projects</h1>
+                <div className='header-line' data-aos='fade-up'></div>
                 <div className='personal-proj'>
-                    <ProjCard className='animation-ltor' proj={ proj1 } />
-                    <ProjCard className='animation-rtol' proj={ proj2 } />
+                    <ProjCard aos='fade-right' proj={ proj1 } />
+                    <ProjCard aos='fade-left' proj={ proj2 } />
                 </div>
-                <h1 className='header animation-head'>Other works</h1>
-                <div className='header-line animation-line'></div>
+                <h1 className='header' data-aos='fade-right'>Other works</h1>
+                <div className='header-line' data-aos='fade-up'></div>
                 <div className='others-first-row'>
-                    <LangCard className='animation-ltor' lang={ { name: 'Python', link: '/coding/python' } } />
-                    <LangCard className='animation-fi' lang={ { name: 'Javascript', link: '/coding/js' } } />
-                    <LangCard className='animation-rtol' lang={ { name: 'C++', link: '/coding/cpp' } } />
+                    <LangCard aos='fade-up' lang={ { name: 'Python', link: '/coding/python' } } />
+                    <LangCard aos='fade-up' lang={ { name: 'Javascript', link: '/coding/js' } } />
+                    <LangCard aos='fade-up' lang={ { name: 'C++', link: '/coding/cpp' } } />
                 </div>
                 <div className='others-sec-row'>
-                    <LangCard className='animation-ltor' lang={ { name: 'Java', link: '/coding/java' } } />
-                    <LangCard className='animation-rtol' lang={ { name: 'C', link: '/coding/c' } } />
+                    <LangCard aos='fade-up' lang={ { name: 'Java', link: '/coding/java' } } />
+                    <LangCard aos='fade-up' lang={ { name: 'C', link: '/coding/c' } } />
                 </div>
             </main>
             <style jsx>
@@ -110,15 +114,6 @@ const Cs = () => {
                         margin-top: 10px;
                     }
 
-                    .animation-head {
-                        animation: slideInLeft 0.75s ease-in;
-                    }
-
-                    .animation-line {
-                        animation: slideInRight 0.75s ease-in;
-                        animation-delay: 0.3s;
-                    }
-
                     .hackathon, .personal-proj {
                         display: flex;
                         align-items: center;
@@ -132,7 +127,6 @@ const Cs = () => {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                    }
                     }
 
                     @keyframes slideInLeft {

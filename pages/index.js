@@ -1,19 +1,12 @@
-import Head from 'next/head';
 import Link from 'next/link';
+import MetaTag from '../shared/MetaTag/MetaTag';
 
 import Stars from '../shared/Star/Stars';
 
 export default function Home () {
   return (
     <div className="container">
-      <Head>
-        <meta property='og:title' content='Natheethorn Teacharuangchit | E-Portfolio' />
-        <meta property='og:image' content='https://e-portfolio-2020.vercel.app/front-page.png' />
-        <meta property='og:description' content='Natheethorn Teacharuangchit E-Portfolio deployed in 2020. Junior at UC Davis. Graduate June 2022. Utilizing Next.js, React.js, and Node.js for this web application' />
-        <meta property='og:url' content='https://e-portfolio-2020.vercel.app/' />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <title>Beam | Main</title>
-      </Head>
+      <MetaTag name='Main'/>
       <Stars />
       <div className='hero'>
         <div className='beam'>

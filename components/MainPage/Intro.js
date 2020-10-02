@@ -1,16 +1,27 @@
+import { useEffect } from 'react';
+
 import CurrentProject from './CurrentProjects';
 
+// Animations
+import Aos from 'aos';
+
 const Intro = () => {
+
+    useEffect( () => {
+        Aos.init( { duration: 1200 } );
+    } );
+
     return (
         <React.Fragment>
+            <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet"></link>
             <div className="about-me">
-                <h1 className='header animation'>About me</h1>
-                <div className='header-line animation-line'></div>
+                <h1 className='header' data-aos='fade-down'>About me</h1>
+                <div className='header-line' data-aos='fade-down'></div>
                 <div className='description'>
-                    <div className='image'>
-                        <img className='animation-image' src='/beam.JPG' alt='profile picture' />
+                    <div className='image' data-aos='fade-right'>
+                        <img src='/beam.JPG' alt='profile picture' />
                     </div>
-                    <div className='bio animation-bio'>
+                    <div className='bio' data-aos='fade-left'>
                         <p>My name is Natheethorn Teacharuangchit. I was born in Bangkok, Thailand. I'm currently a student-athlete on the Men's Golf Team at University of California, Davis and pursuing a Bachelor's Degree of Computer Science and Engineering. I mostly spend my time coding(obviously), practicing golf, and hanging out with my boys. If you wonder why I started programming or playing golf, go visit my CS and GOLF page!</p>
                         <h4>Other Interests</h4>
                         <ul>
@@ -39,23 +50,6 @@ const Intro = () => {
                         margin: 0;
                         font-weight: 400;
                         font-size: 25pt;
-                    }
-
-                    .animation {
-                        animation: slideInLeft 0.75s ease-in;
-                    }
-
-                    .animation-line {
-                        animation: slideInRight 0.75s ease-in;
-                        animation-delay: 0.3s;
-                    }
-
-                    .animation-image {
-                        animation: slideInLeft 0.70s ease-in;
-                    }
-
-                    .animation-bio {
-                        animation: slideInRight 0.70s ease-in;
                     }
 
                     .about-me .header-line {
@@ -106,16 +100,6 @@ const Intro = () => {
                         margin: 0;
                         font-size: 13.5pt;
                         line-height: 20pt;
-                    }
-
-                    @keyframes slideInLeft {
-                        from {opacity: 0; transform: translateX(-100%)}
-                        to {opacity: 1; transform: translateX(0)}		
-                    }
-
-                    @keyframes slideInRight {
-                        from {opacity: 0; transform: translateX(100%)}
-                        to {opacity: 1; transform: translateX(0)}		
                     }
 
                     // Small devices
