@@ -61,14 +61,14 @@ const Cs = () => {
                 <h1 className='header' data-aos='fade-right'>Hackathons</h1>
                 <div className='header-line' data-aos='fade-up'></div>
                 <div className='hackathon'>
-                    <HackCard aos='fade-right' hack={ eTree } />
-                    <HackCard aos='fade-left' hack={ hackDavis } />
+                    <HackCard aos='fade-up' hack={ eTree } />
+                    <HackCard aos='fade-up' hack={ hackDavis } />
                 </div>
                 <h1 className='header' data-aos='fade-right'>Personal Projects</h1>
                 <div className='header-line' data-aos='fade-up'></div>
                 <div className='personal-proj'>
-                    <ProjCard aos='fade-right' proj={ proj1 } />
-                    <ProjCard aos='fade-left' proj={ proj2 } />
+                    <ProjCard aos='fade-up' proj={ proj1 } />
+                    <ProjCard aos='fade-up' proj={ proj2 } />
                 </div>
                 <h1 className='header' data-aos='fade-right'>Other works</h1>
                 <div className='header-line' data-aos='fade-up'></div>
