@@ -1,9 +1,13 @@
+import { useState, useEffect } from 'react';
+
 import Navbar from '../components/Navigation/Navbar';
-import { FaLinkedinIn, FaGithub, FaStackOverflow } from 'react-icons/fa';
-import { useState } from 'react';
 import SideDrawer from '../shared/SideDrawer/SideDrawer';
 import Backdrop from '../shared/Backdrop/Backdrop';
 import MetaTag from '../shared/MetaTag/MetaTag';
+import { FaLinkedinIn, FaGithub, FaStackOverflow } from 'react-icons/fa';
+
+// Animations
+import Aos from 'aos';
 
 const Contact = () => {
     const gitOpen = () => {
@@ -25,8 +29,13 @@ const Contact = () => {
         backdrop = <Backdrop click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />;
     }
 
+    useEffect( () => {
+        Aos.init( { duration: 1200 } );
+    } );
+
     return (
         <React.Fragment>
+            <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet"></link>
             <Navbar click={ () => setSideDrawerOpen( !sideDrawerOpen ) } />
             <SideDrawer show={ sideDrawerOpen } />
             { backdrop }
@@ -34,22 +43,22 @@ const Contact = () => {
                 <MetaTag name='Contact' />
 
                 <div className='contact'>
-                    <h1 className='header animation-head'>Contact</h1>
-                    <div className='header-line animation-line'></div>
-                    <div className='email animation'>
+                    <h1 className='header' data-aos='fade-right'>Contact</h1>
+                    <div className='header-line' data-aos='fade-up'></div>
+                    <div className='email' data-aos='fade-right'>
                         <p>Email: <a>beam4318.t@gmail.com</a>, <a>nteacharuangchit@ucdavis.edu</a></p>
                     </div>
-                    <div className='phone animation'>
+                    <div className='phone' data-aos='fade-right'>
                         <p>Mobile: +1(941) 807 2075</p>
                     </div>
                     <div className='icon'>
-                        <div className='linked animation-line' onClick={ linkedInOpen }>
+                        <div className='linked' data-aos='fade-right' onClick={ linkedInOpen }>
                             <FaLinkedinIn fill='white' size='22px' />
                         </div>
-                        <div className='github animation-line' onClick={ gitOpen }>
+                        <div className='github' data-aos='fade-right' onClick={ gitOpen }>
                             <FaGithub fill='white' size='22px' />
                         </div>
-                        <div className='overflow animation-line' onClick={ stackOpen }>
+                        <div className='overflow' data-aos='fade-right' onClick={ stackOpen }>
                             <FaStackOverflow fill='white' size='22px' />
                         </div>
                     </div>
@@ -87,18 +96,6 @@ const Contact = () => {
                         width: 60px;
                         border-top: 3px solid #444649;
                         margin-top: 10px;
-                    }
-
-                    .animation-head {
-                        animation: slideInLeft 0.75s ease-in;
-                    }
-
-                    .animation-line {
-                        animation: slideInRight 0.75s ease-in;
-                    }
-
-                    .animation {
-                        animation: slideInLeftHalf 0.75s ease-in;
                     }
 
                     .email, .phone {
@@ -167,21 +164,6 @@ const Contact = () => {
                         justify-content: center;
                         cursor: pointer;
                         margin: 0px 20px;
-                    }
-
-                    @keyframes slideInLeft {
-                        from {opacity: 0; transform: translateX(-100%)}
-                        to {opacity: 1; transform: translateX(0)}		
-                    }
-
-                    @keyframes slideInLeftHalf {
-                        from {opacity: 0; transform: translateX(-10%)}
-                        to {opacity: 1; transform: translateX(0)}		
-                    }
-
-                    @keyframes slideInRight {
-                        from {opacity: 0; transform: translateX(100%)}
-                        to {opacity: 1; transform: translateX(0)}		
                     }
 
                     // Small devices
