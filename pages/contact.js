@@ -45,12 +45,6 @@ const Contact = () => {
                 <div className='contact'>
                     <h1 className='header' data-aos='fade-right'>Contact</h1>
                     <div className='header-line' data-aos='fade-up'></div>
-                    <div className='email' data-aos='fade-right'>
-                        <p>Email: <a>beam4318.t@gmail.com</a>, <a>nteacharuangchit@ucdavis.edu</a></p>
-                    </div>
-                    <div className='phone' data-aos='fade-right'>
-                        <p>Mobile: +1(941) 807 2075</p>
-                    </div>
                     <div className='icon'>
                         <div className='linked' data-aos='fade-right' onClick={ linkedInOpen }>
                             <FaLinkedinIn fill='white' size='22px' />
